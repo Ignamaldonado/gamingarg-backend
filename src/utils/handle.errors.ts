@@ -1,7 +1,7 @@
 import { Response } from "express";
 
 export const handleError = (res: Response, error: string, errorRaw?: any) => {
-    console.log(errorRaw)
-    res.status(500)
-    res.send({ error })
+    console.log(errorRaw);
+    res.status(500);
+    res.send({ error });
 }

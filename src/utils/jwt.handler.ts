@@ -1,17 +1,15 @@
-import { Response } from 'express'
-import {  sign, verify } from 'jsonwebtoken'
-import { User } from '../interfaces/user.interface'
+import { Response } from 'express';
+import {  sign, verify } from 'jsonwebtoken';
+import { User } from '../interfaces/user.interface';
 
-const jwt = process.env.SECRET
+const jwt = process.env.SECRET;
 
 const signToken =  ({ username, email, isAdmin}: User) => {
-    const signedJWT = sign({username , email, isAdmin}, jwt!)
-    return signedJWT
+    return sign({username , email, isAdmin}, jwt!);
 }
 
 const verifyToken =  (token: string, res: Response) => {
-    const verified = verify(token, jwt!)
-    return verified
+    return verify(token, jwt!);
 }
 
-export {signToken, verifyToken} 
+export {signToken, verifyToken};

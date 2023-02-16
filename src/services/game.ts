@@ -4,17 +4,7 @@
  import { FileImage } from "../interfaces/file.interface";
 
  const insertGame = async (game: Game) => {
-    console.log(game)
-    let imageURL : string;
-    let image : string;
-    console.log(game.image)
-
-    if (!game.image) {
-      console.log('no hay una imagencita')
-    }
-
-    //const responseInsert = await gameModel.create(game);
-    //return responseInsert;
+    return await gameModel.create(game)
  }
 
  const insertImage = async (file: any) => {
@@ -37,6 +27,8 @@
  }
 
  const putGame = async (id:string, data: Game) => {
+  const responseGet = await gameModel.findOne({_id:id});
+  if (!responseGet) return 'GAME_NOT_FOUND';
   const responsePut = await gameModel.findOneAndUpdate(
     {_id: id},
     data,
@@ -46,8 +38,10 @@
  }
 
  const deleteGame = async (id:string) => {
+  const responseGet = await gameModel.findOne({_id:id});
+  if (!responseGet) return 'GAME_NOT_FOUND';
   const responseDelete = await gameModel.remove({_id:id});
   return responseDelete;
  }
 
- export { insertGame, getGames, getGame, putGame, deleteGame, insertImage }
+ export { insertGame, getGames, getGame, putGame, deleteGame, insertImage };

@@ -11,4 +11,4 @@ const verifier = (req: Request, res: Response, next: NextFunction) => {
     res.status(403).json({ message: 'TOKEN_INVALID' }) 
 }
 
-export {verifier}
+export {verifier};

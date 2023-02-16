@@ -1,9 +1,9 @@
 export interface Game {
-    image: File | null;
+    image: string;
     name: string;
     description: string;
     price: number;
-    console: 'PS4' | 'SWITCH' | "XBOXONE";
+    machine: 'PS4' | 'SWITCH' | "XBOXONE";
     type: string;
     year: number;
 };

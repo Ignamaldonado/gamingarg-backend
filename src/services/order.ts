@@ -18,4 +18,4 @@ const deleteOrder = async (id: string) => {
     return await orderModel.remove({_id: id});
 }
 
-export { getOrders, postOrder, deleteOrder, getOrder}
+export { getOrders, postOrder, deleteOrder, getOrder};

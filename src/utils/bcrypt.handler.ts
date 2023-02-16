@@ -1,14 +1,11 @@
-import { compare, hash } from 'bcryptjs'
-import userModel from '../models/user'
+import { compare, hash } from 'bcryptjs';
 
 const encrypt = async (password: string) => {
-    const hashedPassword = await hash(password, 8)
-    return hashedPassword
+    return await hash(password, 8);
 }
 
 const checkPassword = async (password:string ,hashedPassword: string) => {
-    const checked = compare(password, hashedPassword)
-    return checked
+    return compare(password, hashedPassword);
 }
 
-export {encrypt, checkPassword}
+export {encrypt, checkPassword};

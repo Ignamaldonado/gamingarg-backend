@@ -7,7 +7,7 @@ const GameSchema = new Schema<Game>(
     name: {type: String, required: true},
     description: {type: String, required: true},
     price: {type: Number, required: true},
-    console: {type: String, enum: ['PS4', 'SWITCH', 'XBOXONE'], required: true},
+    machine: {type: String, enum: ['PS4', 'SWITCH', 'XBOXONE'], required: true},
     type: {type: String, required: true},
     year: {type: Number, required: true}
 },

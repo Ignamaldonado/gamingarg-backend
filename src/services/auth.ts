@@ -30,4 +30,4 @@ const loginUser = async ({email, password}: User) => {
     };
     return {token, user};
 }
-export { registerUser, loginUser }
+export { registerUser, loginUser };
