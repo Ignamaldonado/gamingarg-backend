@@ -9,7 +9,7 @@ const orderSchema = new Schema<Order>({
 },{
     timestamps: true,
     versionKey:false
-})
+});
 
-const orderModel = model('orders', orderSchema)
-export default orderModel
+const orderModel = model('orders', orderSchema);
+export default orderModel;

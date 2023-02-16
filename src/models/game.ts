@@ -3,7 +3,7 @@ import { Game } from '../interfaces/game.interface'
 
 const GameSchema = new Schema<Game>(
 {
-    image: {type: String, required: true},
+    image: {type: String},
     name: {type: String, required: true},
     description: {type: String, required: true},
     price: {type: Number, required: true},
@@ -14,7 +14,7 @@ const GameSchema = new Schema<Game>(
 {
     timestamps:true,
     versionKey:false,
-})
+});
 
 const gameModel = model('games', GameSchema);
 export default gameModel;

@@ -3,23 +3,19 @@ import orderModel from "../models/order";
 
 
 const getOrders = async () => {
-    const orders = await orderModel.find({})
-    return orders
+    return await orderModel.find({});
 }
 
 const getOrder = async (id: string) => {
-    const order = await orderModel.findOne({_id: id})
-    return order
+    return await orderModel.findOne({_id: id});
 }
 
 const postOrder = async (body: Order) => {
-    const order = await orderModel.create(body)
-    return order
+    return await orderModel.create(body);
 }
 
 const deleteOrder = async (id: string) => {
-    const order = await orderModel.remove({_id: id})
-    return order
+    return await orderModel.remove({_id: id});
 }
 
 export { getOrders, postOrder, deleteOrder, getOrder}
